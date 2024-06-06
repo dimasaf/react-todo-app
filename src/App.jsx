@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import Todos from "./components/Todos";
 
 const DUMMY = [
   {
@@ -25,9 +26,7 @@ function App() {
   return (
     <div>
       <h1>My Todo List</h1>
-      {todos.map((todo) => (
-        <p key={todo.id}>{todo.title}</p>
-      ))}
+      <Todos todos={todos} />
     </div>
   );
 }
