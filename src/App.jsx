@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "./App.css";
 import Todos from "./components/Todos";
 
 const DUMMY = [
@@ -24,11 +23,18 @@ function App() {
   const [todos, setTodos] = useState(DUMMY);
 
   return (
-    <div>
+    <div style={styles.container}>
       <h1>My Todo List</h1>
       <Todos todos={todos} />
     </div>
   );
 }
+
+const styles = {
+  container: {
+    textAlign: "center",
+    padding: "12px",
+  },
+};
 
 export default App;
