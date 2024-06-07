@@ -22,10 +22,21 @@ const DUMMY = [
 function App() {
   const [todos, setTodos] = useState(DUMMY);
 
+  const toggleCompleted = (id) => {
+    const updateTodos = todos.map((todo) => {
+      if (todo.id === id) {
+        todo.completed = !todo.completed;
+      }
+      return todo;
+    });
+
+    setTodos(updateTodos);
+  };
+
   return (
     <div style={styles.container}>
       <h1>My Todo List</h1>
-      <Todos todos={todos} />
+      <Todos todos={todos} toggleCompleted={toggleCompleted} />
     </div>
   );
 }
